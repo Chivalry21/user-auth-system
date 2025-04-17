@@ -1,6 +1,6 @@
-package com.example.usermanagementsystem.service;
+package com.example.userauthsystem.service;
 
-import com.example.usermanagementsystem.entity.User;
+import com.example.userauthsystem.entity.User;
 
 import java.util.List;
 

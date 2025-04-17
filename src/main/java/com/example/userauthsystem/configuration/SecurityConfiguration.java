@@ -1,4 +1,6 @@
-package com.example.usermanagementsystem.configuration;
+package com.example.userauthsystem.configuration;
+import com.example.userauthsystem.filter.JwtAuthenticationFilter;
+
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -10,13 +12,12 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import com.example.usermanagementsystem.filter.JwtAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class SecurityConfiguration {
-    private final JwtAuthenticationFilter jwtAuthenticationFilter;
+    private final JwtAuthFilter jwtAuthenticationFilter;
     private final AuthenticationProvider authenticationProvider;
 
 

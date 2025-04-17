@@ -1,7 +1,7 @@
-package com.example.usermanagementsystem.controller;
+package com.example.userauthsystem.controller;
 
-import com.example.usermanagementsystem.entity.User;
-import com.example.usermanagementsystem.service.UserService;
+import com.example.userauthsystem.entity.User;
+import com.example.userauthsystem.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

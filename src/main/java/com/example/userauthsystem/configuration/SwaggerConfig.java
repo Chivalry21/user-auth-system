@@ -1,4 +1,4 @@
-package com.example.usermanagementsystem.configuration;
+package com.example.userauthsystem.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
