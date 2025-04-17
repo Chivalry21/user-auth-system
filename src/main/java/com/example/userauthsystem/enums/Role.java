@@ -1,4 +1,4 @@
-package com.example.usermanagementsystem.enums;
+package com.example.userauthsystem.enums;
 
 public enum Role {
     ROLE_USER

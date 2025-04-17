@@ -1,6 +1,6 @@
-package com.example.usermanagementsystem.configuration;
+package com.example.userauthsystem.configuration;
 
-import com.example.usermanagementsystem.repository.UserRepository;
+import com.example.userauthsystem.repository.UserRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.RequiredArgsConstructor;
@@ -28,7 +28,7 @@ public class ApplicationConfiguration {
 
     @Bean
     public UserDetailsService userDetailsService(){
-        return  username -> userRepository.findByEmail(username)
+        return  username -> (org.springframework.security.core.userdetails.UserDetails) userRepository.findByEmail(username)
                 .orElseThrow(()->new UsernameNotFoundException("Invalid Username or Password"));
     }
 
