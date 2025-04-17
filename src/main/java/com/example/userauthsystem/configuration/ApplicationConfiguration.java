@@ -22,19 +22,18 @@ public class ApplicationConfiguration {
     private final UserRepository userRepository;
 
     @Bean
-    public ModelMapper modelMapper(){
+    public ModelMapper modelMapper() {
         return new ModelMapper();
     }
 
     @Bean
-    public UserDetailsService userDetailsService(){
-        return  username -> (org.springframework.security.core.userdetails.UserDetails) userRepository.findByEmail(username)
-                .orElseThrow(()->new UsernameNotFoundException("Invalid Username or Password"));
+    public UserDetailsService userDetailsService() {
+        return username -> (org.springframework.security.core.userdetails.UserDetails) userRepository.findByEmail(username)
+                .orElseThrow(() -> new UsernameNotFoundException("Invalid Username or Password"));
     }
 
-
     @Bean
-    public AuthenticationProvider authenticationProvider(){
+    public AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
         authenticationProvider.setPasswordEncoder(passwordEncoder());
         authenticationProvider.setUserDetailsService(userDetailsService());
@@ -42,14 +41,15 @@ public class ApplicationConfiguration {
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder(){
-        return  new BCryptPasswordEncoder();
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
         return configuration.getAuthenticationManager();
     }
+
     @Bean
     public ObjectMapper objectMapper() {
         ObjectMapper objectMapper = new ObjectMapper();

@@ -1,17 +1,17 @@
 package com.example.userauthsystem.service;
 
-import com.example.userauthsystem.entity.User;
+import com.example.userauthsystem.dto.CreateUserRequest;
+import com.example.userauthsystem.dto.UpdateUserRequest;
+import com.example.userauthsystem.dto.UserResponse;
 
 import java.util.List;
 
 public interface UserService {
-        User createUser(User user);
-        User getUserById(Long id);
-        User updateUser(Long id, User user);
+        UserResponse createUser(CreateUserRequest request);
+        UserResponse getUserById(Long id);
+        UserResponse updateUser(Long id, UpdateUserRequest request);
         void deleteUser(Long id);
-        List<User> getAllUsers();
-    }
-
-
+        List<UserResponse> getAllUsers();
+}
 
 
